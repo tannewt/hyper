@@ -110,7 +110,7 @@ module.exports = class Window {
             return;
           }
 
-          initSession(Object.assign({port: port.comName, productId: port.productId}), (uid, session) => {
+          initSession(Object.assign({port: port.comName, productId: port.productId.toLowerCase()}), (uid, session) => {
             sessions.set(uid, session);
             rpc.emit('session add', {
               rows: sessionOpts.rows,
